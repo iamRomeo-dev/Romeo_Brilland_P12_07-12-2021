@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import { Welcome } from "./Welcome";
 import { LeftNavBar } from "./Header/LeftNavBar";
 import { TopNavBar } from "./Header/TopNavBar";
+import { Dashboard } from "./Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -12,7 +12,7 @@ function App() {
         <TopNavBar />
         <div class="flex">
           <LeftNavBar />
-          <Welcome />
+          <Dashboard />
         </div>
       </QueryClientProvider>
     </main>
