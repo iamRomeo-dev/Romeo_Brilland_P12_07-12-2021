@@ -15,7 +15,7 @@ export const Welcome = () => {
               {data.data.userInfos.firstName}
             </span>
           </h1>
-          <h3 className="text-black text-2xl font-medium">
+          <h3 className="text-black text-2xl font-medium mt-4">
             Félicitations ! Vous avez explosé vos objectif hier 👏
           </h3>
         </>
