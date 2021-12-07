@@ -7,10 +7,10 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <main class="flex flex-col">
+    <main className="flex flex-col">
       <QueryClientProvider client={queryClient}>
         <TopNavBar />
-        <div class="flex">
+        <div className="flex">
           <LeftNavBar />
           <Dashboard />
         </div>
