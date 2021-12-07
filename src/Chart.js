@@ -42,10 +42,11 @@ export const Chart = () => {
               bottom: 5,
             }}
             barCategoryGap={30}
+            barGap={8}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey={`efzegze`} />
-            <YAxis />
+            <XAxis datakey="day" dy={15} />
+            <YAxis orientation="right" tick={{ fontSize: 14 }} />
             <Tooltip />
             <Bar dataKey="kilogram" fill="#000" radius={[10, 10, 0, 0]} />
             <Bar dataKey="calories" fill="red" radius={[10, 10, 0, 0]} />
