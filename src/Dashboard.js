@@ -8,9 +8,9 @@ export const Dashboard = () => {
     <div className="flex-grow p-16">
       <Welcome />
       {/* Blocks */}
-      <div className="flex gap-8">
+      <div className="flex flex-wrap gap-8">
         {/* Block de gauche */}
-        <div className="flex flex-col gap-2 h-full w-5/6">
+        <div className="flex flex-col gap-2 h-full w-4/6">
           <AbovePanel />
           <BelowPanel />
         </div>
