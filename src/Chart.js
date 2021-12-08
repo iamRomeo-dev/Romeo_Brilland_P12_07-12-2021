@@ -29,9 +29,8 @@ export const Chart = () => {
       {status === "loading" && <div>Loading data</div>}
       {status === "error" && <div>Error fetching data</div>}
       {status === "success" && (
-        <ResponsiveContainer width="100%" height="90%" aspect={2 / 1}>
+        <ResponsiveContainer width="100%" aspect={4}>
           <BarChart
-            aspect={4.0 / 3.0}
             data={data?.data.sessions}
             margin={{
               top: 5,
