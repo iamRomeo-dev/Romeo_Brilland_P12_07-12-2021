@@ -10,7 +10,7 @@ export const RightPanel = () => {
       {status === "loading" && <div>Loading data</div>}
       {status === "error" && <div>Error fetching data</div>}
       {status === "success" && (
-        <div className="flex flex-col gap-2 w-1/6">
+        <div className="flex flex-col gap-2">
           <SmallCardWithIcon
             title={"Calories"}
             number={data?.data.keyData.calorieCount}
@@ -47,7 +47,7 @@ export const RightPanel = () => {
 
 export const SmallCardWithIcon = ({ title, number, lg, ...props }) => {
   return (
-    <div className="flex items-center pl-4 h-full bg-gray-100 rounded-md">
+    <div className="flex items-center p-4 h-full w-full bg-gray-100 rounded-md">
       {props.children}
       <div className="flex flex-col pl-4">
         <p className="text-black text-xl font-bold">
