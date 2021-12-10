@@ -1,10 +1,12 @@
 import { CaloriesIcon, CarbsIcon, FatsIcon, ProteinIcon } from "../Icons";
 import { useQuery } from "react-query";
 import { fetchUser } from "../API";
+import { useUser } from "../MyContext";
 
 export const RightPanel = () => {
-  const { data, status } = useQuery(["product", 12], () => fetchUser(12));
-  console.log("user", data?.data.keyData);
+  const user = useUser();
+  const { data, status } = useQuery(["product", user], () => fetchUser(user));
+  // console.log("user", data?.data.keyData);
   return (
     <>
       {status === "loading" && <div>Loading data</div>}

@@ -11,14 +11,14 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { useUser } from "./MyContext";
 
 export const Chart = () => {
-  const { data, status } = useQuery(["activity", 12], () => fetchActivity(12));
-  console.log("activity", data?.data.sessions);
-  // const { data: aaa } = useQuery(["performance", 12], () =>
-  //   fetchPerformance(12)
-  // );
-  // console.log("perfo", aaa);
+  const user = useUser();
+  const { data, status } = useQuery(["activity", user], () =>
+    fetchActivity(user)
+  );
+  // console.log("activity", data?.data.sessions);
 
   // const { data: ccc } = useQuery(["session", 12], () =>
   //   fetchAverageSession(12)
