@@ -6,7 +6,6 @@ import { useUser } from "../MyContext";
 export const RightPanel = () => {
   const user = useUser();
   const { data, status } = useQuery(["product", user], () => fetchUser(user));
-  // console.log("user", data?.data.keyData);
   return (
     <>
       {status === "loading" && <div>Loading data</div>}

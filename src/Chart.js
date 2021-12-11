@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { fetchActivity, fetchAverageSession, fetchPerformance } from "./API";
+import { fetchActivity } from "./API";
 
 import {
   BarChart,
@@ -18,12 +18,7 @@ export const Chart = () => {
   const { data, status } = useQuery(["activity", user], () =>
     fetchActivity(user)
   );
-  // console.log("activity", data?.data.sessions);
 
-  // const { data: ccc } = useQuery(["session", 12], () =>
-  //   fetchAverageSession(12)
-  // );
-  // console.log(ccc);
   return (
     <>
       {status === "loading" && <div>Loading data</div>}
@@ -42,7 +37,7 @@ export const Chart = () => {
             barGap={8}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis datakey="day" tickLine={false} />
+            <XAxis datakey="day" tickLine={false} dy={15} />
             <YAxis orientation="right" tick={{ fontSize: 14 }} />
             <Tooltip />
             <Bar dataKey="kilogram" fill="#000" radius={[10, 10, 0, 0]} />

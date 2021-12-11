@@ -14,6 +14,7 @@ export const TheRadarChart = () => {
   const { status, data } = useQuery(["performance", user], () =>
     fetchPerformance(user)
   );
+
   return (
     <>
       {status === "loading" && <div>Loading data</div>}

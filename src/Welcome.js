@@ -6,6 +6,7 @@ export const Welcome = () => {
   const user = useUser();
   const setUser = useSetUser();
   const { data, status } = useQuery(["product", user], () => fetchUser(user));
+
   return (
     <>
       {status === "loading" && <div>Loading data</div>}

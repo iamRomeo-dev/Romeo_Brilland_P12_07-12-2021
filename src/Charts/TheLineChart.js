@@ -8,7 +8,6 @@ export const ThelineChart = () => {
   const { data, status } = useQuery(["session", user], () =>
     fetchAverageSession(user)
   );
-  // console.log("ccc", data?.data.sessions);
   return (
     <>
       {status === "loading" && <div>Loading data</div>}

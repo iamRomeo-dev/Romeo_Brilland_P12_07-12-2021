@@ -7,7 +7,6 @@ import { useUser } from "../MyContext";
 export const BelowPanel = () => {
   const user = useUser();
   const { data, status } = useQuery(["product", user], () => fetchUser(user));
-  console.log(data?.data.todayScore);
   return (
     <div className="flex gap-2">
       <div className="w-full bg-red-500">
