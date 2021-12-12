@@ -8,6 +8,22 @@ export const ThelineChart = () => {
   const { data, status } = useQuery(["session", user], () =>
     fetchAverageSession(user)
   );
+
+  const dataTransormed = data?.data.sessions;
+
+  const day = {
+    1: "L",
+    2: "M",
+    3: "M",
+    4: "J",
+    5: "V",
+    6: "S",
+    7: "D",
+  };
+
+  for (let i = 0; i < dataTransormed?.length; i++) {
+    dataTransormed[i].day = day[i + 1];
+  }
   return (
     <>
       {status === "loading" && <div>Loading data</div>}
