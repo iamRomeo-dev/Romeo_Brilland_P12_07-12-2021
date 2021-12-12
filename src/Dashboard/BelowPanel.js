@@ -12,7 +12,7 @@ export const BelowPanel = () => {
       <div className="w-full bg-red-500">
         <ThelineChart />
       </div>
-      <div className="w-full bg-gray-900">
+      <div className="w-full bg-gray-900 p-2">
         <TheRadarChart />
       </div>
       <div className="w-full bg-gray-100 flex items-center justify-center">
