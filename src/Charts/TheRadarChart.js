@@ -18,7 +18,7 @@ export const TheRadarChart = () => {
   const dataTransormed = data?.data.data;
   const kindTest = data?.data.kind;
 
-  for (let i = 0; i < dataTransormed.length; i++) {
+  for (let i = 0; i < dataTransormed?.length; i++) {
     dataTransormed[i].kind = kindTest[i + 1];
   }
 
