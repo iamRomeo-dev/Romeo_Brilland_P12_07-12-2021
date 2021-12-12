@@ -18,12 +18,8 @@ export const TheBarChart = () => {
   const { data, status } = useQuery(["activity", user], () =>
     fetchActivity(user)
   );
-  console.log(data?.data.sessions[1].day.substr(-1));
 
   const dataTransormed = data?.data.sessions;
-  const kindTransformed = data;
-  console.log("dataTransormed", dataTransormed);
-  console.log("kindTransformed", kindTransformed);
 
   // Loop on day and keep only the last caracter of the string day. Then i say that dataTransormed[i].day will be now dataTransormed[i].day.substr(-1)
   for (let i = 0; i < dataTransormed?.length; i++) {
