@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { fetchActivity } from "./API";
+import { fetchActivity } from "../API";
 
 import {
   BarChart,
@@ -11,9 +11,9 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { useUser } from "./MyContext";
+import { useUser } from "../MyContext";
 
-export const Chart = () => {
+export const TheBarChart = () => {
   const user = useUser();
   const { data, status } = useQuery(["activity", user], () =>
     fetchActivity(user)
@@ -37,8 +37,9 @@ export const Chart = () => {
             barGap={8}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis datakey="day" tickLine={false} dy={15} />
+            <XAxis datakey="day" dy={15} />
             <YAxis orientation="right" tick={{ fontSize: 14 }} />
+
             <Tooltip />
             <Bar dataKey="kilogram" fill="#000" radius={[10, 10, 0, 0]} />
             <Bar dataKey="calories" fill="red" radius={[10, 10, 0, 0]} />

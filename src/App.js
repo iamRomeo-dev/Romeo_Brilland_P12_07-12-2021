@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { LeftNavBar } from "./Header/LeftNavBar";
 import { TopNavBar } from "./Header/TopNavBar";
-import { Dashboard } from "./Dashboard";
+import { Dashboard } from "./Dashboard/Dashboard";
 import { UserProviderByMe } from "./MyContext";
 
 const queryClient = new QueryClient();

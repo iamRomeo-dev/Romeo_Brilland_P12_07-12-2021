@@ -1,7 +1,7 @@
-import { AbovePanel } from "./Dashboard/AbovePanel";
-import { BelowPanel } from "./Dashboard/BelowPanel";
-import { RightPanel } from "./Dashboard/RightPanel";
-import { Welcome } from "./Welcome";
+import { AbovePanel } from "./AbovePanel";
+import { BelowPanel } from "./BelowPanel";
+import { RightPanel } from "./RightPanel";
+import { Welcome } from "../Welcome";
 
 export const Dashboard = () => {
   return (

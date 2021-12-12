@@ -1,4 +1,4 @@
-import { Chart } from "../Chart";
+import { TheBarChart } from "../Charts/TheBarChart";
 
 export const AbovePanel = () => {
   return (
@@ -20,7 +20,7 @@ export const AbovePanel = () => {
           </div>
         </div>
       </div>
-      <Chart />
+      <TheBarChart />
     </div>
   );
 };
