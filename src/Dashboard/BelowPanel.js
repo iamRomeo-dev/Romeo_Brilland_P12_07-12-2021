@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { fetchUser } from "../API";
 import { ThelineChart } from "../Charts/TheLineChart";
+import { ThePieChart } from "../Charts/ThePieChart";
 import { TheRadarChart } from "../Charts/TheRadarChart";
 import { useUser } from "../MyContext";
 
@@ -27,7 +28,8 @@ export const BelowPanel = () => {
           </div>
         )}
         {status === "success" && (
-          <JobAdMatchingScore score={data.data.todayScore * 100} />
+          <ThePieChart />
+          // <JobAdMatchingScore score={data.data.todayScore * 100} />
         )}
       </div>
     </div>
