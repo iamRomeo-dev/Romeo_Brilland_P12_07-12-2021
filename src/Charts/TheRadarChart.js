@@ -15,21 +15,29 @@ export const TheRadarChart = () => {
     fetchPerformance(user)
   );
 
+  const dataTransormed = data?.data.data;
+  const kindTest = data?.data.kind;
+
+  for (let i = 0; i < dataTransormed.length; i++) {
+    dataTransormed[i].kind = kindTest[i + 1];
+  }
+
   return (
     <>
       {status === "loading" && <div>Loading data</div>}
       {status === "error" && <div>Error fetching data</div>}
       {status === "success" && (
         <ResponsiveContainer aspect={2}>
-          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data.data.data}>
+          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={dataTransormed}>
             <PolarGrid />
             <PolarAngleAxis
               dataKey="kind"
               stroke="#fff"
               tick={{ fontSize: 10 }}
+              tickLine={false}
             />
 
-            <Radar name="Mike" dataKey="value" fill="red" fillOpacity={0.6} />
+            <Radar dataKey="value" fill="red" fillOpacity={0.6} />
           </RadarChart>
         </ResponsiveContainer>
       )}
