@@ -62,15 +62,16 @@ export const TheBarChart = () => {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="day" dy={15} tickLine={false} />
             <YAxis
-              // type="number"
-              // dataKey="kilogram"
+              type="number"
+              yAxisId="kilogram"
               orientation="right"
               tick={{ fontSize: 14 }}
+              domain={[70, 89]}
             />
+            <YAxis yAxisId="calories" domain={[220, 390]} />
             <Tooltip content={<CustomTooltip />} />
-
-            <Bar dataKey="kilogram" fill="#000" radius={[10, 10, 0, 0]} />
-            <Bar dataKey="calories" fill="red" radius={[10, 10, 0, 0]} />
+            <Bar yAxisId="kilogram" fill="#000" radius={[10, 10, 0, 0]} />
+            <Bar yAxisId="calories" fill="red" radius={[10, 10, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       )}
