@@ -43,3 +43,7 @@ To **read** the API, you go to:
 ### `http://localhost:3006/`
 
 **_ The API documentation is on https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard _**
+
+## Utilisation of the App
+
+To change of profil, click on "Profil"
