@@ -24,7 +24,7 @@ export const TheRadarChart = () => {
 
   return (
     <>
-      {status === "loading" && <div>Loading data</div>}
+      {status === "loading" && <div className="h-20"></div>}
       {status === "error" && <div>Error fetching data</div>}
       {status === "success" && (
         <ResponsiveContainer aspect={2}>

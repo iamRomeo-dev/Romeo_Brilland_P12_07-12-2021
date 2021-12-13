@@ -1,7 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { fetchActivity } from "../API";
-
 import {
   BarChart,
   Bar,
@@ -12,6 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useUser } from "../MyContext";
+import { Skeleton } from "../Skeleton";
 
 export const TheBarChart = () => {
   const user = useUser();
@@ -28,7 +28,11 @@ export const TheBarChart = () => {
 
   return (
     <>
-      {status === "loading" && <div>Loading data</div>}
+      {status === "loading" && (
+        <div className="h-24 w-full">
+          <Skeleton />
+        </div>
+      )}
       {status === "error" && <div>Error fetching data</div>}
       {status === "success" && (
         <ResponsiveContainer width="100%" aspect={4}>

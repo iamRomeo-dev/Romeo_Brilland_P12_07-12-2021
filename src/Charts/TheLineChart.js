@@ -2,6 +2,7 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { useQuery } from "react-query";
 import { fetchAverageSession } from "../API";
 import { useUser } from "../MyContext";
+import { Skeleton } from "../Skeleton";
 
 export const ThelineChart = () => {
   const user = useUser();
@@ -27,7 +28,7 @@ export const ThelineChart = () => {
   }
   return (
     <>
-      {status === "loading" && <div>Loading data</div>}
+      {status === "loading" && <div className="h-20"></div>}
       {status === "error" && <div>Error fetching data</div>}
       {status === "success" && (
         <ResponsiveContainer aspect={2}>

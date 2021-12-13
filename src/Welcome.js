@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { fetchUser } from "./API";
 import { useSetUser, useUser } from "./MyContext";
+import { Skeleton } from "./Skeleton";
 
 export const Welcome = () => {
   const user = useUser();
@@ -9,7 +10,17 @@ export const Welcome = () => {
 
   return (
     <>
-      {status === "loading" && <div>Loading data</div>}
+      {status === "loading" && (
+        <div>
+          <h1 className="text-black text-5xl font-medium">
+            Bonjour
+            <Skeleton />
+          </h1>
+          <h3 className="text-black text-2xl font-medium mt-4">
+            Félicitations ! Vous avez explosé vos objectif hier 👏
+          </h3>
+        </div>
+      )}
       {status === "error" && <div>Error fetching data</div>}
       {status === "success" && (
         <>
