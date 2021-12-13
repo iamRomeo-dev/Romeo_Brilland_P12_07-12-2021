@@ -21,7 +21,6 @@ export const ThelineChart = () => {
     7: "D",
   };
 
-  // Loop Then i say that dataTransormed[i].day will be transformed now by the new array day[i + 1]
   for (let i = 0; i < dataTransormed?.length; i++) {
     dataTransormed[i].day = day[i + 1];
   }

@@ -21,7 +21,6 @@ export const TheBarChart = () => {
 
   const dataTransormed = data?.data.sessions;
 
-  // Pour domain={[kiloMin, kiloMax]} je prends le chiffre min et le chiffre max
   const kiloMax = [];
   const kiloMin = [];
   const calMax = [];
@@ -35,17 +34,12 @@ export const TheBarChart = () => {
     calMax.push(Math.max(...calArray));
     calMin.push(Math.min(...calArray));
   }
-  // Loop on day and keep only the last caracter of the string day. Then i say that dataTransormed[i].day will be now dataTransormed[i].day.substr(-1)
+
   for (let i = 0; i < dataTransormed?.length; i++) {
     dataTransormed[i].day = dataTransormed[i].day.substr(-1);
   }
 
-  // <Tooltip> est le cadre qui affiche les données au passage de la souris
-  // active et payload sont fournis par recharts
-  // active affiche true quand on passe sur la donnée sinon affiche false
-  // payload est un tableau qui donne les données sélectionnées
   const CustomTooltip = ({ active, payload }) => {
-    // condition quand on clique ou survol la donnée donc active = true && alors payload se rempli des données payload=[()] && payload est un tableau avec quelquechose
     if (active && payload && payload.length) {
       return (
         <div className="bg-red-600 p-2">
@@ -75,17 +69,11 @@ export const TheBarChart = () => {
               left: 40,
               bottom: 5,
             }}
-            // epaisseur des bars
             barCategoryGap={35}
-            // espace entre les bars
             barGap={8}
           >
-            {/* vertical={false} remove the vertical lines on the background */}
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            {/* dy={15} make padding-top of the x legend form the chart */}
-            {/* tickLine={false} remove the small vertical lines between legend and chart */}
             <XAxis dataKey="day" dy={15} tickLine={false} />
-            {/* Pour selectionner deséchelles pour les bars, on relie chaque  <YAxis> avec sa <Bar> (ex: yAxisId="kilo") */}
             <YAxis
               yAxisId="kilo"
               orientation="right"
@@ -96,9 +84,6 @@ export const TheBarChart = () => {
               tick={{ fontSize: 14 }}
               domain={[kiloMin, kiloMax]}
             />
-            {/* domain permet de définir le min et le max de l'échelle */}
-            {/* hide={true} permet de cacher la legende */}
-            {/* orientation="right" permet de definir la position de la legende */}
             <YAxis yAxisId="cal" hide={true} domain={[0, 10]} />
             <Tooltip content={<CustomTooltip />} />
             <Bar

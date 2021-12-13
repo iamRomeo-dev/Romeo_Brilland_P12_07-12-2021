@@ -10,7 +10,6 @@ function App() {
   return (
     <main>
       <QueryClientProvider client={queryClient}>
-        {/* UseContext provider fournis le state qui est dedans à tous les component qu'il entoure*/}
         <UserProviderByMe>
           <TopNavBar />
           <div className="flex">
