@@ -1,11 +1,10 @@
 import { useQuery } from "react-query";
 import { fetchUser } from "./API";
-import { useSetUser, useUser } from "./MyContext";
+import { useUser } from "./MyContext";
 import { Skeleton } from "./Skeleton";
 
 export const Welcome = () => {
   const user = useUser();
-  const setUser = useSetUser();
   const { data, status } = useQuery(["product", user], () => fetchUser(user));
 
   return (
@@ -24,8 +23,6 @@ export const Welcome = () => {
       {status === "error" && <div>Error fetching data</div>}
       {status === "success" && (
         <>
-          <button onClick={() => setUser(12)}>Karl</button>
-          <button onClick={() => setUser(18)}>Cecilia</button>
           <h1 className="text-black text-5xl font-medium">
             Bonjour
             <span className="text-red-500 ml-4">
