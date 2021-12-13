@@ -22,14 +22,19 @@ export const TheBarChart = () => {
   const dataTransormed = data?.data.sessions;
 
   // Pour domain={[kiloMin, kiloMax]} je prends le chiffre min et le chiffre max
-  const kiloArray = dataTransormed.map((aaa) => aaa.kilogram);
-  const kiloMax = Math.max(...kiloArray);
-  const kiloMin = Math.min(...kiloArray);
+  const kiloMax = [];
+  const kiloMin = [];
+  const calMax = [];
+  const calMin = [];
+  if (status === "success") {
+    let kiloArray = data?.data.sessions.map((aaa) => aaa.kilogram);
+    kiloMax.push(Math.max(...kiloArray));
+    kiloMin.push(Math.min(...kiloArray));
 
-  const calArray = dataTransormed.map((aaa) => aaa.calories);
-  const calMax = Math.max(...calArray);
-  const calMin = Math.min(...calArray);
-
+    const calArray = dataTransormed.map((aaa) => aaa.calories);
+    calMax.push(Math.max(...calArray));
+    calMin.push(Math.min(...calArray));
+  }
   // Loop on day and keep only the last caracter of the string day. Then i say that dataTransormed[i].day will be now dataTransormed[i].day.substr(-1)
   for (let i = 0; i < dataTransormed?.length; i++) {
     dataTransormed[i].day = dataTransormed[i].day.substr(-1);
@@ -94,7 +99,7 @@ export const TheBarChart = () => {
             {/* domain permet de définir le min et le max de l'échelle */}
             {/* hide={true} permet de cacher la legende */}
             {/* orientation="right" permet de definir la position de la legende */}
-            <YAxis yAxisId="cal" hide={true} domain={[calMin, calMax]} />
+            <YAxis yAxisId="cal" hide={true} domain={[0, 10]} />
             <Tooltip content={<CustomTooltip />} />
             <Bar
               yAxisId="kilo"
