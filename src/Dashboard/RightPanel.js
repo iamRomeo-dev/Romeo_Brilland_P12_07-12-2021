@@ -11,7 +11,7 @@ export const RightPanel = () => {
       {status === "loading" && <div>Loading data</div>}
       {status === "error" && <div>Error fetching data</div>}
       {status === "success" && (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-row lg:flex-col gap-2">
           <SmallCardWithIcon
             title={"Calories"}
             number={data?.data.keyData.calorieCount}

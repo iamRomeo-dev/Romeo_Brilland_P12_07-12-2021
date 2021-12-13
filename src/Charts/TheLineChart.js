@@ -2,7 +2,6 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { useQuery } from "react-query";
 import { fetchAverageSession } from "../API";
 import { useUser } from "../MyContext";
-import { Skeleton } from "../Skeleton";
 
 export const ThelineChart = () => {
   const user = useUser();
@@ -35,19 +34,25 @@ export const ThelineChart = () => {
           <LineChart
             data={data?.data.sessions}
             margin={{
-              top: 5,
-              right: 30,
-              left: 20,
+              top: 50,
+              right: 15,
+              left: 15,
               bottom: 5,
             }}
           >
-            <XAxis dataKey="day" axisLine={false} dy={10} tickLine={false} />
+            <XAxis
+              dataKey="day"
+              axisLine={false}
+              dy={10}
+              tickLine={false}
+              stroke="rgba(255, 255, 255, 0.5)"
+            />
             <Tooltip />
 
             <Line
               type="monotone"
               dataKey="sessionLength"
-              stroke="white"
+              stroke="rgba(255, 255, 255, 0.5)"
               strokeWidth={1}
               dot={false}
             />

@@ -10,7 +10,7 @@ export const Dashboard = () => {
       {/* Blocks */}
       <div className="flex flex-wrap gap-8">
         {/* Block de gauche */}
-        <div className="flex flex-col flex-wrap gap-2 h-full lg:w-4/6">
+        <div className="flex flex-col flex-wrap gap-2 h-full min-w-800 lg:w-4/6">
           <AbovePanel />
           <BelowPanel />
         </div>
