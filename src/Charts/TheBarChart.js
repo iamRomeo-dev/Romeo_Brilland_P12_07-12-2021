@@ -26,6 +26,18 @@ export const TheBarChart = () => {
     dataTransormed[i].day = dataTransormed[i].day.substr(-1);
   }
 
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bg-red-600 p-2">
+          <span className="block text-white">{`${payload[0].value} kg`}</span>
+          <span className="block text-white">{`${payload[1].value} kcal`}</span>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <>
       {status === "loading" && (
@@ -55,8 +67,8 @@ export const TheBarChart = () => {
               orientation="right"
               tick={{ fontSize: 14 }}
             />
+            <Tooltip content={<CustomTooltip />} />
 
-            <Tooltip />
             <Bar dataKey="kilogram" fill="#000" radius={[10, 10, 0, 0]} />
             <Bar dataKey="calories" fill="red" radius={[10, 10, 0, 0]} />
           </BarChart>

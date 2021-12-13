@@ -25,6 +25,17 @@ export const ThelineChart = () => {
   for (let i = 0; i < dataTransormed?.length; i++) {
     dataTransormed[i].day = day[i + 1];
   }
+
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bg-white p-2">
+          <span className="block text-black">{`${payload[0].value} min`}</span>
+        </div>
+      );
+    }
+    return null;
+  };
   return (
     <>
       {status === "loading" && <div className="h-20"></div>}
@@ -47,7 +58,7 @@ export const ThelineChart = () => {
               tickLine={false}
               stroke="rgba(255, 255, 255, 0.5)"
             />
-            <Tooltip />
+            <Tooltip content={<CustomTooltip />} />
 
             <Line
               type="monotone"
