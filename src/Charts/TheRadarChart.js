@@ -9,6 +9,10 @@ import { useQuery } from "react-query";
 import { fetchPerformance } from "../API";
 import { useUser } from "../MyContext";
 
+/**
+ * Represents middle block of the bottom block. It is the radar chart.
+ * @constructor
+ */
 export const TheRadarChart = () => {
   const user = useUser();
   const { status, data } = useQuery(["performance", user], () =>

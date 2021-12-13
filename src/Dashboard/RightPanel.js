@@ -3,6 +3,10 @@ import { useQuery } from "react-query";
 import { fetchUser } from "../API";
 import { useUser } from "../MyContext";
 
+/**
+ * Represents right block.
+ * @constructor
+ */
 export const RightPanel = () => {
   const user = useUser();
   const { data, status } = useQuery(["product", user], () => fetchUser(user));
@@ -46,6 +50,13 @@ export const RightPanel = () => {
   );
 };
 
+/**
+ * Represents a book.
+ * @constructor
+ * @param {string} title - The title of the book.
+ * @param {string} number - The author of the book.
+ *  * @param {string} lg - The title of the book.
+ */
 export const SmallCardWithIcon = ({ title, number, lg, ...props }) => {
   return (
     <div className="flex items-center p-4 h-full w-full bg-gray-100 rounded-md">

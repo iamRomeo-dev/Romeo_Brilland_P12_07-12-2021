@@ -3,6 +3,10 @@ import { fetchUser } from "./API";
 import { useUser } from "./MyContext";
 import { Skeleton } from "./Skeleton";
 
+/**
+ * Represents the welcome text.
+ * @constructor
+ */
 export const Welcome = () => {
   const user = useUser();
   const { data, status } = useQuery(["product", user], () => fetchUser(user));

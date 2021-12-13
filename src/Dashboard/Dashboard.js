@@ -3,6 +3,10 @@ import { BelowPanel } from "./BelowPanel";
 import { RightPanel } from "./RightPanel";
 import { Welcome } from "../Welcome";
 
+/**
+ * Represents all the single page except the nav bars.
+ * @constructor
+ */
 export const Dashboard = () => {
   return (
     <div className="flex-grow p-16">

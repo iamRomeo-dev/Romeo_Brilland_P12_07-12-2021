@@ -2,6 +2,10 @@ import { ThelineChart } from "../Charts/TheLineChart";
 import { ThePieChart } from "../Charts/ThePieChart";
 import { TheRadarChart } from "../Charts/TheRadarChart";
 
+/**
+ * Represents bottom block.
+ * @constructor
+ */
 export const BelowPanel = () => {
   return (
     <div className="flex gap-2">

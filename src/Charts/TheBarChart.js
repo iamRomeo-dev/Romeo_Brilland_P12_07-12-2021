@@ -13,6 +13,10 @@ import {
 import { useUser } from "../MyContext";
 import { Skeleton } from "../Skeleton";
 
+/**
+ * Represents the bar chart.
+ * @constructor
+ */
 export const TheBarChart = () => {
   const user = useUser();
   const { data, status } = useQuery(["activity", user], () =>
@@ -39,6 +43,12 @@ export const TheBarChart = () => {
     dataTransormed[i].day = dataTransormed[i].day.substr(-1);
   }
 
+  /**
+   * Represents tooltip.
+   * @constructor
+   * @param {boolean} active
+   * @param {array} payload
+   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (

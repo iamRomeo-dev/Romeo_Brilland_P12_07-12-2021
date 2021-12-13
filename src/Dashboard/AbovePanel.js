@@ -1,5 +1,9 @@
 import { TheBarChart } from "../Charts/TheBarChart";
 
+/**
+ * Represents the top block of bar chart.
+ * @constructor
+ */
 export const AbovePanel = () => {
   return (
     <div className="w-full bg-gray-100 p-8">

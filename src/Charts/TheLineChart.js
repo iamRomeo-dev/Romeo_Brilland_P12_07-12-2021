@@ -3,6 +3,10 @@ import { useQuery } from "react-query";
 import { fetchAverageSession } from "../API";
 import { useUser } from "../MyContext";
 
+/**
+ * Represents left block of the bottom block. It is the line chart.
+ * @constructor
+ */
 export const ThelineChart = () => {
   const user = useUser();
   const { data, status } = useQuery(["session", user], () =>
@@ -25,6 +29,12 @@ export const ThelineChart = () => {
     dataTransormed[i].day = day[i + 1];
   }
 
+  /**
+   * Represents tooltip.
+   * @constructor
+   * @param {boolean} active
+   * @param {array} payload
+   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (

@@ -8,6 +8,10 @@ import { fetchUser } from "../API";
 import { useQuery } from "react-query";
 import { useUser } from "../MyContext";
 
+/**
+ * Represents right block of the bottom block. It is the pie chart.
+ * @constructor
+ */
 export const ThePieChart = () => {
   const user = useUser();
   const { data, status } = useQuery(["product", user], () => fetchUser(user));
