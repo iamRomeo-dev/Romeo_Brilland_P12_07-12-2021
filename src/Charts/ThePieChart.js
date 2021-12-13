@@ -36,16 +36,12 @@ export const ThePieChart = () => {
       )}
       {status === "success" && (
         <>
-          <text className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 text-black text-xs 2xl:text-base font-semibold">
+          <p className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 text-black text-xs 2xl:text-base font-semibold">
             {percentage} %
-          </text>
+          </p>
           <div className="flex flex-col absolute left-1/2 transform -translate-x-1/2 top-2/3 -translate-y-1/2 ">
-            <text className="text-gray-400 text-xs font-semibold">
-              de votre
-            </text>
-            <text className="text-gray-400 text-xs font-semibold">
-              objectif
-            </text>
+            <p className="text-gray-400 text-xs font-semibold">de votre</p>
+            <p className="text-gray-400 text-xs font-semibold">objectif</p>
           </div>
 
           <ResponsiveContainer width="100%" height="100%">
