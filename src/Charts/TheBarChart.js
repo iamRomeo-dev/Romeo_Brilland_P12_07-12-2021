@@ -30,11 +30,11 @@ export const TheBarChart = () => {
   const calMax = [];
   const calMin = [];
   if (status === "success") {
-    let kiloArray = data?.data.sessions.map((aaa) => aaa.kilogram);
+    let kiloArray = data?.data.sessions.map((data) => data.kilogram);
     kiloMax.push(Math.max(...kiloArray));
     kiloMin.push(Math.min(...kiloArray));
 
-    const calArray = dataTransormed.map((aaa) => aaa.calories);
+    const calArray = dataTransormed.map((data) => data.calories);
     calMax.push(Math.max(...calArray));
     calMin.push(Math.min(...calArray));
   }
