@@ -1,4 +1,5 @@
 import { useSetUser } from "./MyContext";
+import PropTypes from "prop-types";
 
 export const Modal = ({ showResults, setShowResults }) => {
   const setUser = useSetUser();
@@ -80,4 +81,9 @@ export const Modal = ({ showResults, setShowResults }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  showResults: PropTypes.string,
+  setShowResults: PropTypes.func,
 };
