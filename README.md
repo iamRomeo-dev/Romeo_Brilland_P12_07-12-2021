@@ -7,6 +7,7 @@ SportSee, a startup dedicated to sports coaching. This page allows the user to t
 - Create React App with _Hooks_
 - Recharts
 - Tailwindcss
+- PropTypes
 
 ## Available Scripts
 
