@@ -23,13 +23,13 @@ In the project directory,to **launch** the project, you can run:
 
 ### `yarn start`
 
-**_ The API used in this project is set up on http://localhost:3006/ _**
+**_ The API used in this project is set up on http://localhost:3000/ _**
 
 ## The BAck-end used in this project
 
 To **clone** the API, you can run:
 
-### `git clone git@github.com:iamRomeo-dev/Romeo_Brilland_P12_07-12-2021.git`
+### `git clone git@github.com:OpenClassrooms-Student-Center/P9-front-end-dashboard.git`
 
 To **install the packages** of the API, you can run:
 
@@ -41,7 +41,7 @@ To **launch** the API, you can run:
 
 To **read** the API, you go to:
 
-### `http://localhost:3006/`
+### `http://localhost:3000/`
 
 **_ The API documentation is on https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard _**
 
