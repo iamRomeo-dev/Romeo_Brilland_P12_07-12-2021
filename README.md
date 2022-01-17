@@ -23,7 +23,7 @@ In the project directory,to **launch** the project, you can run:
 
 ### `yarn start`
 
-**_ The API used in this project is set up on http://localhost:3000/ _**
+** Use the "feature-oc" branch**
 
 ## The BAck-end used in this project
 
